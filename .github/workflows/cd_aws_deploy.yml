@@ -39,6 +39,12 @@ jobs:
             cd src
             dotnet build ./LambdaAttempt.sln
           
+      - name: Publish Shared
+        run: |
+            cd src
+            cd Shared
+            dotnet publish ./Shared.csproj
+          
       - name: Synthesize CDK
         run: |
             cdk synth
