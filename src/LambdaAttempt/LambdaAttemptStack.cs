@@ -1,6 +1,7 @@
 using Amazon.CDK;
 using Amazon.CDK.AWS.Lambda;
 using Amazon.CDK.AWS.Logs;
+using Amazon.CDK.AWS.SES.Actions;
 using Constructs;
 using AssetOptions = Amazon.CDK.AWS.S3.Assets.AssetOptions;
 using Runtime = Amazon.CDK.AWS.Lambda.Runtime;
@@ -26,6 +27,14 @@ namespace LambdaAttempt
                 }
             };
 
+            var sharedLayer = new LayerVersion(this, "MySharedLayer", new LayerVersionProps
+            {
+                CompatibleRuntimes = new[] { Runtime.DOTNET_8 },
+                Code = Code.FromAsset("./src/Shared/bin/Release/net8.0/publish"),
+                Description = "My shared layer with reusable .NET libraries",
+                RemovalPolicy = RemovalPolicy.DESTROY,
+            });
+
             var helloWorldLambdaFunction = new Function(this, "LambdaTestFunction", new FunctionProps
             {
                 Runtime = Runtime.DOTNET_8,
@@ -36,6 +45,7 @@ namespace LambdaAttempt
                 {
                     Bundling = buildOption
                 }),
+                Layers = new[] { sharedLayer }
             });
         }
     }

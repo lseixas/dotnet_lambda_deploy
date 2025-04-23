@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FF9BACEE-932
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaTestFunction", "LambdaTestFunction\src\LambdaTestFunction\LambdaTestFunction.csproj", "{0B716F87-930D-446A-9601-9D9FFEE1E182}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,18 @@ Global
 		{0B716F87-930D-446A-9601-9D9FFEE1E182}.Release|x64.Build.0 = Release|Any CPU
 		{0B716F87-930D-446A-9601-9D9FFEE1E182}.Release|x86.ActiveCfg = Release|Any CPU
 		{0B716F87-930D-446A-9601-9D9FFEE1E182}.Release|x86.Build.0 = Release|Any CPU
+		{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}.Debug|x64.Build.0 = Debug|Any CPU
+		{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}.Debug|x86.Build.0 = Debug|Any CPU
+		{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}.Release|x64.ActiveCfg = Release|Any CPU
+		{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}.Release|x64.Build.0 = Release|Any CPU
+		{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}.Release|x86.ActiveCfg = Release|Any CPU
+		{D5F23D55-B084-4FFA-BF4E-ACF61EF11AFE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
