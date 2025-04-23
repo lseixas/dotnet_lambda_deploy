@@ -21,6 +21,13 @@ jobs:
         run: |
             npm install -g aws-cdk
           
+      - name: Setup AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: 'sa-east-1'
+          
       - name: Restore .NET dependencies
         run: |
             cd src
@@ -34,13 +41,6 @@ jobs:
       - name: Synthesize CDK
         run: |
             cdk synth
-          
-      - name: Setup AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'sa-east-1'
           
       - name: Deploy CDK stack
         env:
