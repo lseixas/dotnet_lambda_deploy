@@ -28,7 +28,8 @@ jobs:
           
       - name: Build project
         run: |
-            dotnet build 
+            cd src
+            dotnet build ./LambdaAttempt.sln
           
       - name: Synthesize CDK
         run: |
