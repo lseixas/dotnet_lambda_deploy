@@ -23,7 +23,8 @@ jobs:
           
       - name: Restore .NET dependencies
         run: |
-            dotnet restore
+            cd src
+            dotnet restore ./LambdaAttempt.sln
           
       - name: Build project
         run: |
