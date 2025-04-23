@@ -25,12 +25,18 @@ jobs:
         run: |
             dotnet restore
           
-      - name: Deploy CDK
-        uses: P47Phoenix/dotnet-cdk-action@v1
-        with:
-          cdk_command: deploy
-          cdk_args: --require-approval never
+      - name: Build project
+        run: |
+            dotnet build 
+          
+      - name: Synthesize CDK
+        run: |
+            cdk synth
+          
+      - name: Deploy CDK stack
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_REGION: 'sa-east-1'
+        run: |
+            cdk deploy --require-approval never
